@@ -17,3 +17,11 @@ import About from '../components/About.vue'
 
 </script>
 
+<style scoped>
+#projects,
+#about {
+  padding: 1%;
+}
+
+</style>
+

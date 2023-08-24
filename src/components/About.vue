@@ -3,7 +3,7 @@
         <h2 class="font-weight-bold">About me</h2>
         <v-divider />
         <v-card flat>
-            <div class="d-flex flex-no-wrap justify-space-between">
+            <div class="d-flex flex-no-wrap justify-space-between" :class="useMobile ? 'flex-column' : ''">
                 <div>
                     <v-card-text>
                         <p class="text-justify text-h6">
@@ -15,15 +15,14 @@
                             <br />
                         </p>
                         <p class="my-5 text-h6">Here are the technologies I've been working with:</p>
-                            <v-row class="row">
-                                <v-col lg="4" md="2" sm="6" xs="12" v-for="skill in skills" :key="skill.text">
+                            <v-row class="row align-center">
+                                <v-col lg="4" md="4" sm="6" v-for="skill in skills" :key="skill.text">
                                     <li><v-icon :icon="skill.icon"></v-icon> {{ skill.text }}</li>
                                 </v-col>
                             </v-row>
                     </v-card-text>
                 </div>
-
-                <v-avatar class="align-self-center" size="225" rounded="pill">
+                <v-avatar class="align-self-center ma-5" size="200" rounded="pill">
                     <v-img :src="primary"></v-img>
                 </v-avatar>
             </div>
@@ -51,6 +50,9 @@
 import { ref } from 'vue'
 import Modal from './Modal.vue'
 import primary from '../assets/primary.png'
+import { inject } from 'vue';
+
+const useMobile = inject<boolean>('useMobile')
 
 const skills = {
     html: {
@@ -59,7 +61,7 @@ const skills = {
     },
     css: {
         icon: 'mdi-language-css3',
-        text: 'CSS'
+        text: 'CSS3'
     },
     bootstrap: {
         icon: 'mdi-bootstrap',
@@ -79,12 +81,7 @@ const skills = {
     },
     vue: {
         icon: 'mdi-vuejs',
-        text: 'Vue 3'
-    },
-
-    vuetify: {
-        icon: 'mdi-vuetify',
-        text: 'Vuetify'
+        text: 'Vue3'
     },
     nuxt: {
         icon: 'mdi-nuxt',
@@ -94,13 +91,17 @@ const skills = {
         icon: 'mdi-graphql',
         text: 'GraphQL'
     },
+    php: {
+        icon: 'mdi-language-php',
+        text: 'PHP8'
+    },
     sql: {
         icon: 'mdi-database-search',
         text: 'MySQL'
     },
     git: {
         icon: 'mdi-git',
-        text: 'Git'
+        text: 'Git/GitHub'
     },
 }
 
@@ -113,7 +114,6 @@ const modal = ref(false)
 }
 .down-arrow {
     position: absolute;
-    /* top: calc(100vh - 80px); */
     left: calc(50% - 14px);
     width: 0;
     height: 30px;

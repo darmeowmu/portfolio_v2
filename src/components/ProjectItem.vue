@@ -1,6 +1,7 @@
 <template>
     <v-card class="mt-3 mb-16" flat>
-        <div class="d-flex flex-no-wrap justify-space-between">
+        
+        <div class="d-flex flex-no-wrap justify-space-between" :class="useMobile ? 'flex-column' : ''">
             <div class="d-flex align-center">
                 <div>
                     <v-card-title class="text-h4 font-weight-bold">{{ title }}</v-card-title>
@@ -23,7 +24,7 @@
                     </v-card-actions>
                 </div>
             </div>
-            <v-avatar class="avatar w-50" size="310"  rounded="lg" variant="outlined">
+            <v-avatar class="avatar elevation-12" :class="useMobile ? 'w-100' : 'w-50'"  size="310" rounded="lg" variant="text">
                 <v-img cover class="img" :src="imgLink"></v-img>
             </v-avatar>
         </div>
@@ -31,6 +32,8 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue';
+
 defineProps({
     title: String,
     text: String,
@@ -39,4 +42,12 @@ defineProps({
     imgLink: String,
     stacks: Array
 })
+
+const useMobile = inject<boolean>('useMobile')
+
 </script>
+
+<style scoped>
+
+
+</style>

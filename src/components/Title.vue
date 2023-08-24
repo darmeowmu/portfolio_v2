@@ -1,8 +1,9 @@
 <template>
-    <v-container fluid class="title-container d-flex align-center">
-        <div>
-            <h1 class="font-weight-black">Hello, I'm Darwin.</h1>
-            <h2 class="pt-6">I am a front-end developer who loves building and designing. I'm currently focused on creating
+    <v-container fluid class="title-container d-flex align-center ">
+        <v-responsive
+        >
+            <h1 class="font-weight-black" :class="useMobile ? 'text-h4' : 'text-h2'">Hello, I'm Darwin.</h1>
+            <h2 class="pt-6" :class="useMobile ? 'text-h6 text-justify' : 'text-h4'">I am a front-end developer who loves building and designing. I'm currently focused on creating
                 beautiful web interfaces and applications</h2>
             <div class="d-flex pt-12">
                 <v-btn variant="text" icon href="https://github.com/Meowinn"><v-icon icon="mdi-github" size="40px"></v-icon></v-btn>
@@ -11,28 +12,29 @@
             </div>
 
             <div class="mb-16 pt-16">
-                <v-btn class="mr-5 pa-0" variant="text" size="large" href="#projects"><span class="px-2">Look at my work</span>
+                <v-btn class="mr-5 pa-0" variant="text" size="large" href="#projects" :block="useMobile" ><span class="px-2">Look at my work</span>
                     <v-icon icon="mdi-arrow-down"></v-icon></v-btn>
-                <v-btn variant="text" size="large" href="https://drive.google.com/file/d/1swsfTa6Pyxiah85AqOw5Ut6KrXXSlIqW/view"><span span class="px-2">View Resume</span>
+                <v-btn variant="text" size="large" href="https://drive.google.com/file/d/1swsfTa6Pyxiah85AqOw5Ut6KrXXSlIqW/view" :block="useMobile"><span span class="px-2">View Resume</span>
                     <v-icon icon="mdi-arrow-top-right-bold-box-outline"></v-icon>
                 </v-btn>
+
             </div>
             <div class="d-flex justify-center mb-16">
                 <a class="scroll-down" href="#projects"></a>
             </div>
-        </div>
+        </v-responsive>
 
     </v-container>
 </template>
+
+<script setup lang="ts">
+import { inject } from 'vue';
+
+const useMobile = inject<boolean>('useMobile')
+
+</script>
   
 <style scoped>
-h1 {
-    font-size: 3.5rem;
-}
-
-h2 {
-    font-size: 1.8rem;
-}
 
 .title-container {
     height: 100vh;
@@ -43,7 +45,7 @@ h2 {
     border: 2px solid rgb(56, 56, 56);
     position: absolute;
     left: 50%;
-    top: 20%;
+    bottom: 0%;
     border-radius: 50px;
     cursor: pointer;
 }
