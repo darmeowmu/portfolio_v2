@@ -1,11 +1,11 @@
 <template>
-  <v-app :theme="darkMode ? 'dark' : ''" >
-    <v-app-bar  scroll-behavior="elevate">
+  <v-app :theme="darkMode ? 'dark' : ''">
+    <v-app-bar scroll-behavior="elevate">
       <v-container id="nav-container">
-        
-        <v-app-bar-title >
+
+        <v-app-bar-title>
           <div class="d-flex align-center justify-space-between">
-            <v-btn @click="scrollToTop"  :ripple="false"><span class="font-weight-bold">DARWIN FAGARANG</span></v-btn>
+            <v-btn @click="scrollToTop" :ripple="false"><span class="font-weight-bold">DARWIN FAGARANG</span></v-btn>
 
             <v-app-bar-nav-icon v-if="mobile" variant="text" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <div v-else>
@@ -18,7 +18,6 @@
     <v-navigation-drawer v-if="mobile" v-model="drawer" location="right" class="text-center">
       <Nav :dark-theme="darkMode" @themeToggle="darkMode = !darkMode" />
     </v-navigation-drawer>
-
 
     <v-main id="main">
       <RouterView />
@@ -61,13 +60,13 @@ provide('useMobile', mobile);
 </script>
 
 <style scoped>
-#main
- {
+#main {
   width: 1000px;
   margin: 0 auto;
 }
 
 #nav-container {
-  width: 1050px;;
+  width: 1050px;
+  ;
 }
 </style>
