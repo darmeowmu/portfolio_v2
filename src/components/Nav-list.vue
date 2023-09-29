@@ -18,7 +18,7 @@
             </div>
         </v-list-item>
         <v-list-item rounded="lg" variant="text"
-            href="https://drive.google.com/file/d/1swsfTa6Pyxiah85AqOw5Ut6KrXXSlIqW/view">
+            href="https://drive.google.com/file/d/1ls2J21m2-VlfKlzRnBwnHm3SL6IHIWor/view?usp=sharing">
             <span class="font-weight-medium">Resume</span>
             <v-icon icon="mdi-arrow-top-right-bold-box-outline"></v-icon>
         </v-list-item>
