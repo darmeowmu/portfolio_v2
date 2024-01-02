@@ -14,7 +14,7 @@
             <div class="mb-16 pt-16">
                 <v-btn class="mr-5 pa-0" variant="text" size="large" href="#projects" :block="useMobile" ><span class="px-2">Look at my work</span>
                     <v-icon icon="mdi-arrow-down"></v-icon></v-btn>
-                <v-btn variant="text" size="large" href="https://drive.google.com/file/d/1swsfTa6Pyxiah85AqOw5Ut6KrXXSlIqW/view" :block="useMobile"><span span class="px-2">View Resume</span>
+                <v-btn variant="text" size="large" href="https://drive.google.com/file/d/14_hO2mwjevG_RN7lhgXbM5u8l-2OAvNK/view?usp=sharing" :block="useMobile"><span span class="px-2">View Resume</span>
                     <v-icon icon="mdi-arrow-top-right-bold-box-outline"></v-icon>
                 </v-btn>
 

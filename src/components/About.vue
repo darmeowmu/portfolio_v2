@@ -97,12 +97,16 @@ const skills = {
     },
     sql: {
         icon: 'mdi-database-search',
-        text: 'MySQL'
+        text: 'SQL'
     },
     git: {
         icon: 'mdi-git',
         text: 'Git/GitHub'
     },
+    cms: {
+        icon: 'mdi-cog',
+        text: 'Content Management Systems'
+    }
 }
 
 const modal = ref(false)
